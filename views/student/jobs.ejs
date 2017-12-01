@@ -1,0 +1,27 @@
+<% include ../partitles/header %>
+    <% include ../partitles/nav %>
+    <div class='container view'>
+        <% if(flash.success && flash.success.length > 0) { %>
+            <div class='alert alert-success' role='alert'>
+                <%=flash.success[0]%>
+            </div>
+        <% }%>
+            <% if(user.pass) { %>
+                <% companys.forEach(function(company) { %>
+               <div class='card'>
+                   <div class='card-body'>
+                       <h4 class='card-title'><%= company.name%></h4>
+                       <h6 class='card-subtitle mb-2 text-muted'>Work type: <%=company.work%></h6>
+                       <label>Description:</label>
+                       <p class='card-text'><%=company.desc%></p>
+                       <h6><strong>Email: </strong><%=company.email%></h6>
+                       <h6><strong>Call: </strong><%=company.number%></h6>
+                       <a href='/student/apply/<%=company._id%>' class='card-link'>Apply</a>
+                   </div>
+               </div> 
+        <% }) %>    
+   <% }else { %>
+          <h3 class='text-center'>You must pass online test to apply</h3>
+   <% } %>
+</div>
+<% include ../partitles/footer %>

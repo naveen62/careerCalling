@@ -1,0 +1,54 @@
+<% include ../partitles/header %>
+<% include ../partitles/nav %>
+    <div class='container view'>
+        <% if(students.accepted[0]) { %>
+            <h3 class='text-center'>Accepted Companies</h3>
+            <table class='table table-stripped'>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Company name</th>
+                        <th>Email</th>
+                        <th>Work type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% students.accepted.forEach(function(student) { %>
+                        <tr>
+                            <th scope='row'><i class="fa fa-hand-o-right" aria-hidden="true"></i></th>
+                            <th><%=student.name%></th>
+                            <th><%=student.email%></th>
+                            <th><%=student.work%></th>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>    
+        <% } %>
+        <% if(students.rejected[0]) { %>
+             <h3 class='text-center'>Rejected Companies</h3>
+            <table class='table table-stripped'>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Company name</th>
+                        <th>Email</th>
+                        <th>Work type</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% students.rejected.forEach(function(student) { %>
+                        <tr>
+                            <th scope='row'><i class="fa fa-hand-o-right" aria-hidden="true"></i></th>
+                            <th><%=student.name%></th>
+                            <th><%=student.email%></th>
+                            <th><%=student.work%></th>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>    
+        <% } %>
+        <% if(!students.accepted[0] && !students.rejected[0]) { %>
+            <h3 class='text-center'>You have not applied to any job or no companys response</h3>
+        <% } %>
+    </div>       
+<% include ../partitles/footer %>

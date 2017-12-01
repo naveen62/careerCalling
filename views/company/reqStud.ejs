@@ -1,0 +1,22 @@
+<% include ../partitles/header %>
+<% include ../partitles/companynav %>
+    <div class='container view'>
+        <% if(flash.success && flash.success.length > 0) { %>
+            <div class='alert alert-success' role='alert'>
+                <%=flash.success[0]%>
+            </div>
+        <% }%>
+        <% company.applied.forEach(function(apply) { %>
+            <div class='card'>
+                <div class='card-body'>
+                    <h4 class='card-title'><%=apply.name%></h4>
+                    <h6 class='card-subtitle mb-2 text-muted'>Qualification: <%=apply.qualification%></h6>
+                    <label>Description:</label>
+                    <p class='card-text'><%=apply.desc%></p>
+                    <a href='/company/accept/<%=apply._id%>' class='card-link'>Accept</a>
+                    <a href='/company/reject/<%=apply._id%>' class='card-link'>Reject</a>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+<% include ../partitles/footer %>

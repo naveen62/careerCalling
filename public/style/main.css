@@ -1,0 +1,49 @@
+#home {
+    background: url(http://images.indianexpress.com/2017/03/money.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+}
+
+#hmepara {
+    font-size: x-large;
+    padding-top: 40px;
+}
+.hmebut {
+    width: 330px;
+    margin: 10px;    
+}
+#button {
+    margin-top: 20px;
+}
+.view {
+    margin-top: 25px;
+}
+.but1 {
+    margin-bottom: 40px;
+}
+label {
+    font-weight: bold;
+}
+.navv {
+    font-size: larger;
+    border: solid 2px black;
+    border-radius: 8px;
+}
+.card {
+    margin-top: 15px;
+}
+#inline {
+    display: inline-block;
+}
+.block {
+    display: none;
+}
+.unblock {
+    display: block;
+}
+.call {
+    display: none;
+}

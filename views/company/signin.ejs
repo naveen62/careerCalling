@@ -1,0 +1,26 @@
+<% include ../partitles/header %>
+ <div class='container view'>
+     <div class='row'>
+         <div class='col-md-4 offset-md-4'>
+             <h1>Company Sign In</h1>
+             <% if(flash.error && flash.error.length > 0) { %>
+               <div class='alert alert-danger' role='alert'>
+                <%=flash.error[0]%>
+               </div>
+             <% } %>
+             <form action='/company/signin' method='POST'>
+               <div class='form-group'>
+                <label>Username:</label>
+                <input type='text' name='username' required placeholder='Enter username' class='form-control'></input>
+               </div>
+               <div class='form-group'>
+                <label>Password:</label>
+                <input type='password' name='password' required placeholder='Enter password' class='form-control'></input>
+               </div>
+               <button type='submit' class='btn btn-outline-success btn-block'>Sign In</button>
+             </form>
+             <h6>dont have account Sign up <a href='/company/signup'>here</a></h6>
+         </div>
+     </div>
+ </div>
+<% include ../partitles/footer %>

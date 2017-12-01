@@ -1,0 +1,83 @@
+<% include ../partitles/header %>
+    <div class='container view'>
+        <div class='row'>
+            <div class='col-md-6 offset-md-3'>
+                <h1>Student Sign Up</h1>
+                <% if(flash.error && flash.error.length > 0) { %>
+                    <div class='alert alert-danger' role='alert'>
+                        <%=flash.error[0]%>
+                    </div>
+               <% } %>
+                <form action='/student/signup' method='POST'>
+                    <div class='form-group'>
+                        <label>Student Name:</label>
+                        <input type='text' name='name' required placeholder='Enter name' class='form-control'></input>
+                    </div>
+                    <div class='form-group'>
+                        <label>Select gender</label>
+                        <select class='form-control' name='gender'>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class='form-group'>
+                        <label>Student Age:</label>
+                        <input type='number' name='age' required placeholder='Enter age' class='form-control'></input>
+                    </div>
+                    <div class='form-group'>
+                        <label>Student qualification:</label>
+                        <input type='text' name='qualification' required placeholder='Enter qualification' class='form-control'></input>
+                    </div>
+                    <div class='form-group'>
+                        <label>Student date of birth:</label>
+                        <input type='date' name='Bdate' required placeholder='Enter birth day' class='form-control'></input>
+                    </div>
+                    <div class='form-group'>
+                        <label>Student passout year:</label>
+                        <select class='form-control' name='passout'>
+                          <% for(var i=1970; i<=2018; i++) { %>
+                            <option value='<%=i%>'><%=i%></option>
+                          <% } %>    
+                        </select>
+                    </div>
+                    <div class='form-group'>
+                        <label>Student aggregate marks:</label>
+                        <select class='form-control' name='marks'>
+                            <% for(var i=1; i<=100; i++) { %>
+                             <option value='<%=i%>'><%=i%></option>
+                           <% } %>  
+                        </select>
+                    </div>
+                    <div class='form-group'>
+                        <label>Student contrat No:</label>
+                        <input type='tel' name='number' required placeholder='Ex +91876786576' class='form-control'></input>
+                        <small class='form-text text-mute'>Please provide original number and at starting provide country code</small>
+                    </div>
+                     <div class='form-group'>
+                        <label>Student Email:</label>
+                        <input type='email' name='email' required placeholder='Enter email address' class='form-control'></input>
+                        <small class='form-text text-mute'>Please provide original email address</small>
+                    </div>   
+                    <div class='form-group'>
+                        <label>Student address:</label>
+                        <input type='text' name='address' required placeholder='Enter address' class='form-control'></input>
+                    </div>   
+                    <div class='form-group'>
+                        <label>Student description:</label>
+                        <textarea class='form-control' name='desc' required placeholder='enter description'></textarea>
+                    </div>
+                    <div class='form-group'>
+                        <label>Student Username:</label>
+                        <input type='text' name='username' required placeholder='Enter Username' class='form-control'></input>
+                    </div>   
+                    <div class='form-group'>
+                        <label>Student Password:</label>
+                        <input type='password' name='password' required placeholder='Enter password' class='form-control'></input>
+                    </div>   
+                    <button class='btn btn-success btn-block but1' type='submit'>Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </div>
+<% include ../partitles/footer %>

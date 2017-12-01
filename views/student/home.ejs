@@ -1,0 +1,13 @@
+<% include ../partitles/header %>
+<% include ../partitles/nav %>
+       <div class='container view'>
+           <% if(flash.success && flash.success.length > 0) { %>
+                <div class='alert alert-success' role='alert'>
+                    <%=flash.success[0]%>
+                </div>
+             <% }%>
+           <h2>Welcome <%=user.name%></h2>
+           <label>Qualification: </label> <span><%=user.qualification%></span></br>
+           <label>Your aggregate marks: </label> <span><%=user.marks%></span>
+       </div>
+<% include ../partitles/footer %>

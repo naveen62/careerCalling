@@ -1,0 +1,49 @@
+<% include ../partitles/header %>
+    <% include ../partitles/nav %>
+    <div class='container view'>
+        <% if(!user.pass) { %>
+        <div id='inline'>
+            <div class='form-group'>
+                <h5>Q 1: All APIs of Nodejs are</h5>
+                <input type='radio' class='Q1' name='question1' value='a'required> A - Asynchronous</input></br>
+                <input type='radio' class='Q1' name='question1' value='b'required> B - Synchronous</input></br>
+                <input type='radio' class='Q1' name='question1' value='c'required> C - Asynchronous</input></br>
+                <input type='radio' class='Q1' name='question1' value='d'required> D - None of them</input></br>
+            </div>
+            <div class='form-group'>
+                <h5>Q 2: Which of the following statement is valid to use a Node module http in a Node based application?</h5>
+                <input type='radio' class='Q2' name='question2' value='a' required> A - var http = require("http");</input></br>
+                <input type='radio' class='Q2' name='question2' value='b'required> B - var http = import("http");</input></br>
+                <input type='radio' class='Q2' name='question2' value='c'required> C - package http;</input></br>
+                <input type='radio' class='Q2' name='question2' value='d'required> D - import http;</input></br>
+            </div>
+            <div class='form-group'>
+                <h5>Q 3: What is Node.JS?</h5>
+                <input type='radio' class='Q3' name='question3' value='a' required> A - Node.js is a web server.</input></br>
+                <input type='radio' class='Q3' name='question3' value='b' required> B - Node.js is a JavaScript based framework/platform built on Google Chrome's JavaScript V8 Engine.</input></br>
+                <input type='radio' class='Q3' name='question3' value='c' required> C - Node.js is a java based framework.</input></br>
+                <input type='radio' class='Q3' name='question3' value='d' required> D - None of the above.</input></br>
+            </div>
+            <div class='form-group'>
+                <h5>Q 4: What npm stands for?</h5>
+                <input type='radio' class='Q4' name='question4' value='a' required> A - Node Package Manager</input></br>
+                <input type='radio' class='Q4' name='question4' value='b' required> B - Node Project Manager</input></br>
+                <input type='radio' class='Q4' name='question4' value='c' required> C - New Project Manager</input></br>
+                <input type='radio' class='Q4' name='question4' value='d' required> D - New Package Manager</input></br>
+            </div> 
+            <div class='form-group'>
+                <h5>Q 5: Why code written in Node.JS is pretty fast although being written in JavaScript?</h5>
+                <input type='radio' class='Q5' name='question5' value='a' required> A - Node.JS internally converts JavaScript code to Java based code and then execute the same.</input></br>
+                <input type='radio' class='Q5' name='question5' value='b' required> B - Node.JS internally converts JavaScript code to C based code and then execute the same.</input></br>
+                <input type='radio' class='Q5' name='question5' value='c' required> C - Being built on Google Chrome's V8 JavaScript Engine.</input></br>
+                <input type='radio' class='Q5' name='question5' value='d' required> D - None of the above.s</input></br>
+            </div>
+            <button id='check' type='button' class='btn btn-primary but1'>Check</button>
+            <input type='hidden' id='getvalue' value='<%= user._id%>'></input>
+        </div><span id='info'></span>
+        <% } else { %>
+        <h3 class='text-center'>You have passed the test</h3>
+        <% }%>
+    </div>
+    <script type='text/javascript' src='/js/test.js'></script>
+<% include ../partitles/footer %>
